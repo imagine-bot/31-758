@@ -1,13 +1,13 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { SalesforceLeads } from '../components/SalesforceLeads';
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
+    <main>
+      <SalesforceLeads 
+        accountName={process.env.SALESFORCE_ACCOUNT_NAME} 
+        accessToken={process.env.SALESFORCE_ACCESS_TOKEN} 
+        instanceUrl={process.env.SALESFORCE_INSTANCE_URL} 
+      />
     </main>
-  )
+  );
 }
